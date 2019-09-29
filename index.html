@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="revealjs/css/reset.css">
+		<link rel="stylesheet" href="revealjs/css/reveal.css">
+		<link rel="stylesheet" href="themes/orange.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/presentation_styling.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="revealjs/lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!--Title Slide-->
+				<section id="Title">
+					<h1>A Tutorial on Stochastic Methods for Inverse Problems</h1>
+					<h3>Markov Chain Monte Carlo and Hamiltonian Monte Carlo</h3>
+					<br>
+					Georgia K. Stuart<br>
+					4 October 2019<br>
+					Scientific Computing Seminar, UT Dallas
+
+				</section>
+
+				<section id="outline">
+					<div class="row">
+						<div class="col-3">
+							<img src="images/logo.png" alt="UT Dallas Logo" class="plain">
+						</div>
+						<div class="col-9 my-auto">
+							<h2 class="slide-title">Outline</h2>
+						</div>
+					</div>
+					<hr/>
+
+				</section>
+
+				<section id="motivation">
+					<div class="row">
+						<div class="col-3">
+							<img src="images/logo.png" alt="UT Dallas Logo" class="plain">
+						</div>
+						<div class="col-9 my-auto">
+							<h2 class="slide-title">Motivation: Earth Imaging</h2>
+						</div>
+					</div>
+					<hr/>
+
+					<div class="row">
+						<div class="col-6 my-auto">
+							<img src="images/exploration_seismology_animation.gif" alt="Wave reflections">
+						</div>
+						<div class="col-5">
+							<ul class="content-list">
+								<li>In <span class="emph">exploration seismology</span>, one aim is to image the subsurface.</li>
+								<li>Finding the <span class="emph">velocity profile</span> can tell us about the materials in the subsurface.</li>
+								<li>Transmitted and reflected <span class="emph">waves</span> can tell us about velocities and interfaces between materials.</li>
+							</ul>
+						</div>
+					</div>
+
+				</section>
+			</div>
+		</div>
+
+		<script src="revealjs/js/reveal.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				center: false,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,13 @@
+h2.slide-title {
+    margin: 0;
+    text-align: left;
+}
+
+
+.content-list li {
+    margin-bottom: 20px;
+}
+
+.emph {
+    color: #e87500;
+}
