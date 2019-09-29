@@ -11,3 +11,8 @@ h2.slide-title {
 .emph {
     color: #e87500;
 }
+
+figcaption {
+    color: dimgrey;
+    font-size: small;
+}
