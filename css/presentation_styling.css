@@ -34,3 +34,7 @@ figcaption {
     color: #fff;
     background-color: rgba(0, 0, 0, 0.4);
     padding: 5px; }
+
+.histogram {
+    fill: #0b2e13;
+}
