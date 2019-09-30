@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.6, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1152 648" style="enable-background:new 0 0 1152 648;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#909090;}
+	.st1{fill:#FFFFFF;stroke:#E36F1E;stroke-width:3;stroke-miterlimit:10;}
+	.st2{fill:none;}
+	.st3{font-family:'MyriadPro-Regular';}
+	.st4{font-size:18px;}
+	.st5{clip-path:url(#SVGID_2_);}
+	.st6{clip-path:url(#SVGID_4_);}
+	.st7{font-family:'CMMI10';}
+	.st8{font-size:13.1252px;}
+	.st9{font-family:'CMR10';}
+	.st10{letter-spacing:2;}
+	.st11{font-family:'CMMI7';}
+	.st12{font-size:9.1876px;}
+	.st13{letter-spacing:3;}
+	.st14{font-family:'CMSY10';}
+	.st15{clip-path:url(#SVGID_4_);fill:none;stroke:#000000;stroke-width:0.5243;stroke-miterlimit:10;}
+	.st16{fill:#FFFFFF;stroke:#808080;stroke-width:3;stroke-miterlimit:10;}
+	.st17{fill:none;stroke:#808080;stroke-width:3;stroke-miterlimit:10;}
+</style>
+<g>
+	<g>
+		<g>
+			<polygon class="st0" points="648.91,193.5 648.91,230.71 637.35,230.71 650.5,253.5 663.65,230.71 652.09,230.71 652.09,193.5 
+							"/>
+		</g>
+	</g>
+</g>
+<rect x="547.5" y="136.5" class="st1" width="206" height="57"/>
+<rect x="565.43" y="156.21" class="st2" width="171.57" height="17.79"/>
+<text transform="matrix(1 0 0 1 566.4248 168.9927)" class="st3 st4">Random Walk Sampler</text>
+<rect x="547.5" y="253.5" class="st1" width="206" height="70"/>
+<rect x="565.43" y="273.39" class="st2" width="171.57" height="45.31"/>
+<text transform="matrix(1 0 0 1 581.3193 286.1724)"><tspan x="0" y="0" class="st3 st4">Solve Forward Eqn</tspan><tspan x="12.03" y="21.6" class="st3 st4">to get Sim Data</tspan></text>
+<rect x="547.5" y="383.5" class="st1" width="206" height="87"/>
+<rect x="565.43" y="403.21" class="st2" width="171.57" height="17.79"/>
+<text transform="matrix(1 0 0 1 576.1001 415.9927)" class="st3 st4">Metropolis Criterion</text>
+<g>
+	<g>
+		<defs>
+			<rect id="SVGID_1_" x="565" y="426" width="172" height="31.84"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+		</clipPath>
+		<g class="st5">
+			<defs>
+				<rect id="SVGID_3_" x="565" y="426" width="172" height="31.84"/>
+			</defs>
+			<clipPath id="SVGID_4_">
+				<use xlink:href="#SVGID_3_"  style="overflow:visible;"/>
+			</clipPath>
+			<g class="st6">
+				<text transform="matrix(1 0 0 1 564.7817 445.25)" class="st7 st8">ρ</text>
+			</g>
+			<g class="st6">
+				<text transform="matrix(1 0 0 1 573.7549 445.25)" class="st9 st8">(</text>
+			</g>
+			<g class="st6">
+				<text transform="matrix(1 0 0 1 578.8584 445.25)"><tspan x="0" y="0" class="st7 st8">q</tspan><tspan x="7.86" y="0" class="st7 st8 st10">,</tspan><tspan x="12.77" y="0" class="st7 st8">q</tspan></text>
+			</g>
+			<g class="st6">
+				<text transform="matrix(1 0 0 1 596.8809 447.2197)" class="st11 st12">n</text>
+			</g>
+			<g class="st6">
+				<text transform="matrix(1 0 0 1 604.0254 445.25)"><tspan x="0" y="0" class="st9 st8 st13">)=</tspan><tspan x="18.85" y="0" class="st9 st8">min</tspan></text>
+			</g>
+			<path class="st6" d="M660.53,453.01c0,0.79,0,0.93,0.03,1.12c0.28,1.89,1.97,2.74,2.51,3.01c0.11,0.07,0.12,0.08,0.12,0.29
+				c0,0.29-0.01,0.29-0.29,0.29c-0.2,0-0.22,0-0.51-0.14c-1.63-0.77-2.94-2.02-2.94-3.93v-7.8c0-0.14,0-0.17-0.05-0.47
+				c-0.26-1.64-1.52-2.59-2.4-3.07c-0.18-0.11-0.2-0.12-0.2-0.34c0-0.21,0.01-0.22,0.22-0.34c1.5-0.83,2.3-2.02,2.42-3.4
+				c0.01-0.14,0.01-0.83,0.01-1.23v-6.06c0-0.88,0-1,0.04-1.26c0.28-1.6,1.56-2.64,2.86-3.28c0.34-0.16,0.37-0.16,0.55-0.16
+				c0.29,0,0.29,0.01,0.29,0.29c0,0.2,0,0.22-0.1,0.28c-2.55,1.26-2.55,2.94-2.55,3.75v7.56c0,0.75-0.43,2.64-2.99,3.87
+				c0.91,0.41,1.65,1.01,2.17,1.67c0.83,1.06,0.83,2.03,0.83,2.65V453.01z"/>
+			<g class="st6">
+				<text transform="matrix(1 0 0 1 664.9121 445.25)" class="st9 st8">1</text>
+			</g>
+			<g class="st6">
+				<text transform="matrix(1 0 0 1 671.4746 445.25)" class="st7 st8">,</text>
+			</g>
+			<g class="st6">
+				<text transform="matrix(1 0 0 1 684.4082 436.3721)" class="st7 st8">π</text>
+			</g>
+			<g class="st6">
+				<text transform="matrix(1 0 0 1 692.3604 436.3721)" class="st9 st8">(</text>
+			</g>
+			<g class="st6">
+				<text transform="matrix(1 0 0 1 697.4639 436.3721)" class="st7 st8">q</text>
+			</g>
+			<g class="st6">
+				<text transform="matrix(1 0 0 1 703.7949 436.3721)" class="st14 st8">|</text>
+			</g>
+			<g class="st6">
+				<text transform="matrix(1 0 0 1 707.4414 436.3721)" class="st7 st8">D</text>
+			</g>
+			<g class="st6">
+				<text transform="matrix(1 0 0 1 718.6729 436.3721)" class="st9 st8">)</text>
+			</g>
+			<line class="st15" x1="681.07" y1="441.97" x2="727.11" y2="441.97"/>
+			<g class="st6">
+				<text transform="matrix(1 0 0 1 681.0713 454.2529)" class="st7 st8">π</text>
+			</g>
+			<g class="st6">
+				<text transform="matrix(1 0 0 1 689.0234 454.2529)" class="st9 st8">(</text>
+			</g>
+			<g class="st6">
+				<text transform="matrix(1 0 0 1 694.1289 454.2529)" class="st7 st8">q</text>
+			</g>
+			<g class="st6">
+				<text transform="matrix(1 0 0 1 699.9873 456.2227)" class="st11 st12">n</text>
+			</g>
+			<g class="st6">
+				<text transform="matrix(1 0 0 1 707.1309 454.2529)" class="st14 st8">|</text>
+			</g>
+			<g class="st6">
+				<text transform="matrix(1 0 0 1 710.7764 454.2529)" class="st7 st8">D</text>
+			</g>
+			<g class="st6">
+				<text transform="matrix(1 0 0 1 722.0078 454.2529)" class="st9 st8">)</text>
+			</g>
+			<path class="st6" d="M734.15,453.01c0,0.88,0,1-0.04,1.26c-0.28,1.6-1.56,2.64-2.86,3.28c-0.34,0.16-0.37,0.16-0.55,0.16
+				c-0.28,0-0.29-0.01-0.29-0.29c0-0.17,0-0.22,0.09-0.28c0.56-0.28,1.21-0.62,1.8-1.35c0.76-0.96,0.76-1.72,0.76-2.4v-7.56
+				c0-0.75,0.43-2.64,2.99-3.87c-0.91-0.41-1.65-1.01-2.17-1.67c-0.83-1.06-0.83-2.03-0.83-2.65v-6.72c0-0.79,0-0.93-0.03-1.12
+				c-0.26-1.88-1.94-2.73-2.51-3.01c-0.12-0.07-0.12-0.09-0.12-0.29c0-0.28,0.01-0.29,0.29-0.29c0.2,0,0.22,0,0.51,0.14
+				c1.63,0.77,2.94,2.02,2.94,3.92v7.8c0,0.38,0.13,2.31,2.49,3.57c0.14,0.08,0.16,0.09,0.16,0.32c0,0.21-0.01,0.22-0.1,0.28
+				c-1.76,0.95-2.55,2.28-2.55,3.83V453.01z"/>
+		</g>
+	</g>
+</g>
+<path class="st16" d="M1050.5,296.5"/>
+<rect x="246.5" y="392.5" class="st1" width="206" height="70"/>
+<rect x="264.43" y="408.39" class="st2" width="171.57" height="40.61"/>
+<text transform="matrix(1 0 0 1 295.2773 421.1724)"><tspan x="0" y="0" class="st3 st4">Update step in</tspan><tspan x="4.55" y="21.6" class="st3 st4">Markov chain</tspan></text>
+<path class="st17" d="M622.5,531.5"/>
+<rect x="778.86" y="406.35" class="st2" width="94.6" height="15.77"/>
+<text transform="matrix(1 0 0 1 778.8574 419.1299)" class="st3 st4">Reject</text>
+<rect x="479.86" y="406.35" class="st2" width="94.6" height="15.77"/>
+<text transform="matrix(1 0 0 1 479.8574 419.1299)" class="st3 st4">Accept</text>
+<g>
+	<g>
+		<g>
+			<polygon class="st0" points="648.91,323.5 648.91,360.72 637.35,360.72 650.5,383.5 663.65,360.72 652.09,360.72 652.09,323.5 
+							"/>
+		</g>
+	</g>
+</g>
+<line class="st17" x1="753.5" y1="427.5" x2="861.5" y2="427.5"/>
+<line class="st17" x1="861.5" y1="156.5" x2="861.5" y2="427.5"/>
+<g>
+	<g>
+		<g>
+			<polygon class="st0" points="861.5,154.91 776.28,154.91 776.28,143.35 753.5,156.5 776.28,169.65 776.28,158.09 861.5,158.09 
+							"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<g>
+			<polygon class="st0" points="547.5,423.91 475.28,423.91 475.28,412.35 452.5,425.5 475.28,438.65 475.28,427.09 547.5,427.09 
+							"/>
+		</g>
+	</g>
+</g>
+<line class="st17" x1="350.5" y1="392.5" x2="350.5" y2="156.5"/>
+<g>
+	<g>
+		<g>
+			<polygon class="st0" points="350.5,158.09 524.72,158.09 524.72,169.65 547.5,156.5 524.72,143.35 524.72,154.91 350.5,154.91 
+							"/>
+		</g>
+	</g>
+</g>
+</svg>
