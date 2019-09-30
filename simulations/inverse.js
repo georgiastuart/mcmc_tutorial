@@ -66,6 +66,8 @@ let sample = () => {
         u_data.push(u);
         x_data.push(x);
 
+        u_textbox.text("Standard uniform draw: " + u);
+
         filter_u(u);
         console.log(u_hist_counts);
 
