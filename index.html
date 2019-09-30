@@ -73,7 +73,7 @@
                 </div>
                 <div class="col-5">
                     <ul class="content-list">
-                        <li>In <span class="emph">exploration seismology</span>, one aim is to image the subsurface.
+                        <li>In <span class="emph">exploration seismology</span>, one aim is to find parameters profiles of the subsurface.
                         </li>
                         <li>Finding the <span class="emph">velocity profile</span> can tell us about the materials in
                             the subsurface.
@@ -198,6 +198,21 @@
                 </div>
             </div>
             <hr/>
+            <div class="row">
+                <button type="button" class="btn btn-primary mx-auto mb-2" id="invButton">Start Simulation</button>
+            </div>
+            <div class="row">
+                <div class="col-5">
+                    \(U\)
+                    <div id="utext"></div>
+                    <div id="usim"></div>
+                </div>
+                <div class="col-5">
+                    \(X\)
+                    <div id="xtext"></div>
+                    <div id="xsim"></div>
+                </div>
+            </div>
         </section>
 
         <section id="why-mcmc">
@@ -212,9 +227,13 @@
             <hr/>
             <div class="row">
                 <ul class="content-list">
-                    <li><span class="emph">MCMC</span> methods provide a way to sample from a complicated probability distribution.</li>
+                    <li><span class="emph">MCMC</span> methods provide a way to sample from a complicated probability
+                        distribution.
+                    </li>
                     <li>Distributions may be <span class="emph">high dimensional</span>.</li>
-                    <li>Based off of constructing a Markov chain with the probability distribution as the <span class="emph">equilibrium distribution</span>.</li>
+                    <li>Based off of constructing a Markov chain with the probability distribution as the <span
+                            class="emph">equilibrium distribution</span>.
+                    </li>
                 </ul>
             </div>
         </section>
@@ -257,11 +276,34 @@
                 <h4>How do we connect this with the velocity inversion problem? Bayes' Rule!</h4>
             </div>
             <div class="row">
-                    <img src="images/bayes.svg" alt="Bayes' Rule" class="plain img-fluid" style="width: 100%">
+                <img src="images/bayes.svg" alt="Bayes' Rule" class="plain img-fluid" style="width: 100%">
             </div>
         </section>
 
-        <section>
+        <section id="likelihood">
+            <div class="row">
+                <div class="col-3">
+                    <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
+                </div>
+                <div class="col-9 my-auto">
+                    <h2 class="slide-title">The Likelihood Function</h2>
+                </div>
+            </div>
+            <hr/>
+        </section>
+
+        <section id="prior">
+            <div class="row">
+                <div class="col-3">
+                    <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
+                </div>
+                <div class="col-9 my-auto">
+                    <h2 class="slide-title">The Prior Distribution</h2>
+                </div>
+            </div>
+            <hr/>
+        </section>
+
         <section id="mcmc-inversion">
             <div class="row">
                 <div class="col-3">
@@ -286,29 +328,48 @@
             <hr/>
         </section>
 
-            <section id="forward">
-                <div class="row">
-                    <div class="col-3">
-                        <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
-                    </div>
-                    <div class="col-9 my-auto">
-                        <h2 class="slide-title">The Forward Problem</h2>
-                    </div>
+        <section id="forward">
+            <div class="row">
+                <div class="col-3">
+                    <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
                 </div>
-                <hr/>
-            </section>
+                <div class="col-9 my-auto">
+                    <h2 class="slide-title">The Forward Problem</h2>
+                </div>
+            </div>
+            <hr/>
+            <div class="row">
+                <div class="col-6 my-auto">
+                    <figure>
+                        <img src="images/wavefront.gif" class="plain" alt="Wave propagation">
+                        <figcaption>The propagation of a Ricker wavelet through a half space velocity field.
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-5">
+                    <ul class="content-list">
+                        <li>The <span class="emph">forward problem</span> produces your simulated data.
+                        </li>
+                        <li>For the examples in this talk, the forward problem is  <span class="emph">the acoustic wave equation</span>.
+                        </li>
+                        <li> $$\frac{1}{c^2(x, z)} \frac{\partial^2 p}{\partial t^2} - \nabla p = f$$ where \(p\) is pressure,
+                            \(t\) is time, \(c\) is velocity, and \(f\) is a seismic source.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-            <section id="metropolis">
-                <div class="row">
-                    <div class="col-3">
-                        <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
-                    </div>
-                    <div class="col-9 my-auto">
-                        <h2 class="slide-title">Metropolis Criterion</h2>
-                    </div>
+        <section id="metropolis">
+            <div class="row">
+                <div class="col-3">
+                    <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
                 </div>
-                <hr/>
-            </section>
+                <div class="col-9 my-auto">
+                    <h2 class="slide-title">Metropolis Criterion</h2>
+                </div>
+            </div>
+            <hr/>
         </section>
 
         <section id="mcmc-inversion-example">
@@ -326,8 +387,10 @@
     </div>
 </div>
 
+<script src="https://d3js.org/d3.v5.min.js"></script>
 <script src="revealjs/js/reveal.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<script src="simulations/inverse.js"></script>
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <!--<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>-->
@@ -487,16 +550,16 @@
             // { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 
             // Syntax highlight for <code> elements
-            { src: 'revealjs/plugin/highlight/highlight.js', async: true },
+            {src: 'revealjs/plugin/highlight/highlight.js', async: true},
 
             // Zoom in and out with Alt+click
-            { src: 'revealjs/plugin/zoom-js/zoom.js', async: true },
+            {src: 'revealjs/plugin/zoom-js/zoom.js', async: true},
 
             // // Speaker notes
             // { src: 'plugin/notes/notes.js', async: true },
 
             // MathJax
-            { src: 'revealjs/plugin/math/math.js', async: true }
+            {src: 'revealjs/plugin/math/math.js', async: true}
         ]
 
     });
