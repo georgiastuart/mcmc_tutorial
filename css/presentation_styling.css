@@ -16,3 +16,7 @@ figcaption {
     color: dimgrey;
     font-size: small;
 }
+
+.theorem {
+    font-size: large;
+}

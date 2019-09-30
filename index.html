@@ -1,132 +1,251 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>A Tutorial on Stochastic Methods for Inverse Problems</title>
+    <title>A Tutorial on Stochastic Methods for Inverse Problems</title>
 
-		<link rel="stylesheet" href="revealjs/css/reset.css">
-		<link rel="stylesheet" href="revealjs/css/reveal.css">
-		<link rel="stylesheet" href="themes/orange.css">
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/presentation_styling.css">
+    <link rel="stylesheet" href="revealjs/css/reset.css">
+    <link rel="stylesheet" href="revealjs/css/reveal.css">
+    <link rel="stylesheet" href="themes/orange.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/presentation_styling.css">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="revealjs/lib/css/monokai.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="revealjs/lib/css/monokai.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<!--Title Slide-->
-				<section id="Title">
-					<h1>A Tutorial on Stochastic Methods for Inverse Problems</h1>
-					<h3>Markov Chain Monte Carlo and Hamiltonian Monte Carlo</h3>
-					<br>
-					Georgia K. Stuart<br>
-					4 October 2019<br>
-					Scientific Computing Seminar, UT Dallas
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <!--Title Slide-->
+        <section id="Title">
+            <h1>A Tutorial on Stochastic Methods for Inverse Problems</h1>
+            <h3>Markov Chain Monte Carlo and Hamiltonian Monte Carlo</h3>
+            <br>
+            Georgia K. Stuart<br>
+            4 October 2019<br>
+            Scientific Computing Seminar, UT Dallas
 
-				</section>
+        </section>
 
-				<section id="outline">
-					<div class="row">
-						<div class="col-3">
-							<img src="images/logo.png" alt="UT Dallas Logo" class="plain">
-						</div>
-						<div class="col-9 my-auto">
-							<h2 class="slide-title">Outline</h2>
-						</div>
-					</div>
-					<hr/>
+        <section id="outline">
+            <div class="row">
+                <div class="col-3">
+                    <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
+                </div>
+                <div class="col-9 my-auto">
+                    <h2 class="slide-title">Outline</h2>
+                </div>
+            </div>
+            <hr/>
 
-				</section>
+        </section>
 
-				<section id="motivation">
-					<div class="row">
-						<div class="col-3">
-							<img src="images/logo.png" alt="UT Dallas Logo" class="plain">
-						</div>
-						<div class="col-9 my-auto">
-							<h2 class="slide-title">Motivation: Earth Imaging</h2>
-						</div>
-					</div>
-					<hr/>
+        <section id="motivation">
+            <div class="row">
+                <div class="col-3">
+                    <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
+                </div>
+                <div class="col-9 my-auto">
+                    <h2 class="slide-title">Motivation: Earth Imaging</h2>
+                </div>
+            </div>
+            <hr/>
 
-					<div class="row">
-						<div class="col-6 my-auto">
-							<figure>
-							<img src="images/exploration_seismology_animation.gif" alt="Wave reflections">
-								<figcaption>An illustration of a vibroseis truck and resulting wavefront with simplified reflections.</figcaption>
-							</figure>
-						</div>
-						<div class="col-5">
-							<ul class="content-list">
-								<li>In <span class="emph">exploration seismology</span>, one aim is to image the subsurface.</li>
-								<li>Finding the <span class="emph">velocity profile</span> can tell us about the materials in the subsurface.</li>
-								<li>Transmitted and reflected <span class="emph">waves</span> can tell us about velocities and interfaces between materials.</li>
-							</ul>
-						</div>
-					</div>
-				</section>
+            <div class="row">
+                <div class="col-6 my-auto">
+                    <figure>
+                        <img src="images/exploration_seismology_animation.gif" alt="Wave reflections">
+                        <figcaption>An illustration of a vibroseis truck and resulting wavefront with simplified
+                            reflections.
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-5">
+                    <ul class="content-list">
+                        <li>In <span class="emph">exploration seismology</span>, one aim is to image the subsurface.
+                        </li>
+                        <li>Finding the <span class="emph">velocity profile</span> can tell us about the materials in
+                            the subsurface.
+                        </li>
+                        <li>Transmitted and reflected <span class="emph">waves</span> can tell us about velocities and
+                            interfaces between materials.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-				<section id="shot-gather">
-					<div class="row">
-						<div class="col-3">
-							<img src="images/logo.png" alt="UT Dallas Logo" class="plain">
-						</div>
-						<div class="col-9 my-auto">
-							<h2 class="slide-title">Seismic Data: Shot Gather</h2>
-						</div>
-					</div>
-					<hr/>
-					<div class="row">
-						<div class="col-5">
-							<ul class="content-list">
-								<li><span class="emph">Shot gathers</span> are receiver traces for one seismic source.</li>
-								<li>Traces are arranged by <span class="emph">offset</span>.</li>
-								<li>The y-axis is <span class="emph">time</span>.</li>
-								<li><span class="emph">Reflections</span> show up in the traces.</li>
-							</ul>
-						</div>
-						<div class="col-6 my-auto">
-							<figure>
-							<img src="images/shot_gather.jpg" alt="Shot gather">
-								<figcaption>A seismic shot gather. (Attribution: Gamut CC-BY-NC-ND)</figcaption>
-							</figure>
-						</div>
+        <section id="shot-gather">
+            <div class="row">
+                <div class="col-3">
+                    <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
+                </div>
+                <div class="col-9 my-auto">
+                    <h2 class="slide-title">Seismic Data: Shot Gather</h2>
+                </div>
+            </div>
+            <hr/>
+            <div class="row">
+                <div class="col-5 my-auto">
+                    <ul class="content-list">
+                        <li><span class="emph">Shot gathers</span> are receiver traces for one seismic source.</li>
+                        <li>Traces are arranged by <span class="emph">offset</span>.</li>
+                        <li>The y-axis is <span class="emph">time</span>.</li>
+                        <li><span class="emph">Reflections</span> show up in the traces.</li>
+                    </ul>
+                </div>
+                <div class="col-6 my-auto">
+                    <figure>
+                        <img src="images/shot_gather.jpg" class="plain" alt="Shot gather">
+                        <figcaption>A seismic shot gather. (Attribution: Gamut CC-BY-NC-ND)</figcaption>
+                    </figure>
+                </div>
 
-					</div>
+            </div>
 
-				</section>
-			</div>
-		</div>
+        </section>
 
-		<script src="revealjs/js/reveal.js"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+        <section id="uq">
+            <div class="row">
+                <div class="col-3">
+                    <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
+                </div>
+                <div class="col-9 my-auto">
+                    <h2 class="slide-title">The Goal: Inversion with Uncertainty Information</h2>
+                </div>
+            </div>
+            <hr/>
+            <div class="row">
+                <div class="col-6 my-auto">
+                    <figure>
+                        <img src="images/one_d_velocity.png" class="plain"
+                             alt="One dimensional velocity slice with probability distributions">
+                        <figcaption>
+                            Posterior probability distributions (top), a one-dimensional slice of a velocity field
+                            with credible intervals (bottom).
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-5 my-auto">
+                    <ul class="content-list">
+                        <li><span class="emph">Deterministic</span> inversion algorithms give no or limited uncertainty
+                            information.
+                        </li>
+                        <li><span class="emph">Stochastic</span> algorithms provide uncertainty information without
+                            imposing a certain shape
+                            on the distribution of the parameters.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				center: false,
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true }
-				]
-			});
-		</script>
-	</body>
+        <section id="sampling">
+            <div class="row">
+                <div class="col-3">
+                    <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
+                </div>
+                <div class="col-9 my-auto">
+                    <h2 class="slide-title">Lets Start from the Beginning: Sampling from a Distribution</h2>
+                </div>
+            </div>
+            <hr/>
+            <div class="row">
+                <ul class="content-list">
+                    <li>Computers sample (pesudo) <span class="emph">random numbers</span> from a uniform distribution
+                        from 0 to 1.
+                    </li>
+                    <li>We want to sample from <span class="emph">arbitrary probability distributions</span>.</li>
+                    <li>One approach: solve \(F(X) = U\)</li>
+                </ul>
+                <div class="row mx-auto">
+                    <div class="card">
+                        <div class="card-header theorem">
+                            Generating Continuous Variables (Baron 2014)
+                        </div>
+                        <div class="card-body theorem">
+                            <ul class="content-list">
+                                <li>Generated a standard uniform random variable, \(U\).</li>
+                                <li>
+                                    Calculate \(X = F^{-1} (U)\) where \(F\) is the probability distribution of
+                                    interest.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="inverse-sampling">
+            <div class="row">
+                <div class="col-3">
+                    <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
+                </div>
+                <div class="col-9 my-auto">
+                    <h2 class="slide-title">An Example: Exponential Distribution</h2>
+                </div>
+            </div>
+            <hr/>
+        </section>
+
+        <section id="why-mcmc">
+            <div class="row">
+                <div class="col-3">
+                    <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
+                </div>
+                <div class="col-9 my-auto">
+                    <h2 class="slide-title">A Solution for Trickier Distributions: Markov Chain Monte Carlo</h2>
+                </div>
+            </div>
+            <hr/>
+        </section>
+
+        <section id="mcmc-flowchart">
+            <div class="row">
+                <div class="col-3">
+                    <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
+                </div>
+                <div class="col-9 my-auto">
+                    <h2 class="slide-title">The Markov Chain Monte Carlo Algorithm</h2>
+                </div>
+            </div>
+            <hr/>
+        </section>
+
+    </div>
+</div>
+
+<script src="revealjs/js/reveal.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        dependencies: [
+            {src: 'plugin/markdown/marked.js'},
+            {src: 'plugin/markdown/markdown.js'},
+            {src: 'plugin/notes/notes.js', async: true},
+            {src: 'plugin/highlight/highlight.js', async: true}
+        ]
+    });
+</script>
+</body>
 </html>
