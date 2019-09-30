@@ -206,10 +206,17 @@
                     <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
                 </div>
                 <div class="col-9 my-auto">
-                    <h2 class="slide-title">A Solution for Trickier Distributions: Markov Chain Monte Carlo</h2>
+                    <h2 class="slide-title">A Solution for Trickier Distributions: Markov Chain Monte Carlo (MCMC)</h2>
                 </div>
             </div>
             <hr/>
+            <div class="row">
+                <ul class="content-list">
+                    <li><span class="emph">MCMC</span> methods provide a way to sample from a complicated probability distribution.</li>
+                    <li>Distributions may be <span class="emph">high dimensional</span>.</li>
+                    <li>Based off of constructing a Markov chain with the probability distribution as the <span class="emph">equilibrium distribution</span>.</li>
+                </ul>
+            </div>
         </section>
 
         <section id="mcmc-flowchart">
@@ -218,7 +225,99 @@
                     <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
                 </div>
                 <div class="col-9 my-auto">
-                    <h2 class="slide-title">The Markov Chain Monte Carlo Algorithm</h2>
+                    <h2 class="slide-title">The Metropolis-Hastings Algorithm</h2>
+                </div>
+            </div>
+            <hr/>
+        </section>
+
+        <section id="mcmc-example">
+            <div class="row">
+                <div class="col-3">
+                    <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
+                </div>
+                <div class="col-9 my-auto">
+                    <h2 class="slide-title">A Simple Example</h2>
+                </div>
+            </div>
+            <hr/>
+        </section>
+
+        <section id="mcmc-bayes">
+            <div class="row">
+                <div class="col-3">
+                    <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
+                </div>
+                <div class="col-9 my-auto">
+                    <h2 class="slide-title">Bayes' Rule</h2>
+                </div>
+            </div>
+            <hr/>
+            <div class="row">
+                <h4>How do we connect this with the velocity inversion problem? Bayes' Rule!</h4>
+            </div>
+            <div class="row">
+                    <img src="images/bayes.svg" alt="Bayes' Rule" class="plain img-fluid" style="width: 100%">
+            </div>
+        </section>
+
+        <section>
+        <section id="mcmc-inversion">
+            <div class="row">
+                <div class="col-3">
+                    <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
+                </div>
+                <div class="col-9 my-auto">
+                    <h2 class="slide-title">Metropolis-Hastings Velocity Inversion Flowchart</h2>
+                </div>
+            </div>
+            <hr/>
+
+        </section>
+        <section id="rws">
+            <div class="row">
+                <div class="col-3">
+                    <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
+                </div>
+                <div class="col-9 my-auto">
+                    <h2 class="slide-title">Random Walk Sampler</h2>
+                </div>
+            </div>
+            <hr/>
+        </section>
+
+            <section id="forward">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
+                    </div>
+                    <div class="col-9 my-auto">
+                        <h2 class="slide-title">The Forward Problem</h2>
+                    </div>
+                </div>
+                <hr/>
+            </section>
+
+            <section id="metropolis">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
+                    </div>
+                    <div class="col-9 my-auto">
+                        <h2 class="slide-title">Metropolis Criterion</h2>
+                    </div>
+                </div>
+                <hr/>
+            </section>
+        </section>
+
+        <section id="mcmc-inversion-example">
+            <div class="row">
+                <div class="col-3">
+                    <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
+                </div>
+                <div class="col-9 my-auto">
+                    <h2 class="slide-title">Metropolis-Hastings Velocity Inversion Example</h2>
                 </div>
             </div>
             <hr/>
@@ -231,20 +330,175 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<!--<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>-->
 
 <script>
     // More info about config & dependencies:
     // - https://github.com/hakimel/reveal.js#configuration
     // - https://github.com/hakimel/reveal.js#dependencies
     Reveal.initialize({
+
+        // Display presentation control arrows
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: false,
+
+        // Push each slide change to the browser history. Implies `hash: true`
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Vertical centering of slides
         center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // See https://github.com/hakimel/reveal.js/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (video/audio/iframe)
+        // - null: Media will only autoplay if data-autoplay is present
+        // - true: All media will autoplay, regardless of individual setting
+        // - false: No media will autoplay, regardless of individual setting
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes
+        // - null: Iframes with data-src AND data-preload will be loaded when within
+        //   the viewDistance, iframes with only data-src will be loaded when visible
+        // - true: All iframes with data-src will be loaded when within the viewDistance
+        // - false: All iframes with data-src will be loaded only when visible
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: Reveal.navigateNext,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: 120,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Hides the address bar on mobile devices
+        hideAddressBar: true,
+
+        // Opens links in an iframe preview overlay
+        // Add `data-preview-link` and `data-preview-link="false"` to customise each link
+        // individually
+        previewLinks: false,
+
+        // Transition style
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Transition speed
+        transitionSpeed: 'default', // default/fast/slow
+
+        // Transition style for full page slide backgrounds
+        backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Parallax background image
+        parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+        // Parallax background size
+        parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px"
+
+        // Number of pixels to move the parallax background per slide
+        // - Calculated automatically unless specified
+        // - Set to 0 to disable movement along an axis
+        parallaxBackgroundHorizontal: null,
+        parallaxBackgroundVertical: null,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+
         dependencies: [
-            {src: 'plugin/markdown/marked.js'},
-            {src: 'plugin/markdown/markdown.js'},
-            {src: 'plugin/notes/notes.js', async: true},
-            {src: 'plugin/highlight/highlight.js', async: true}
+            // Interpret Markdown in <section> elements
+            // { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            // { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+            // Syntax highlight for <code> elements
+            { src: 'revealjs/plugin/highlight/highlight.js', async: true },
+
+            // Zoom in and out with Alt+click
+            { src: 'revealjs/plugin/zoom-js/zoom.js', async: true },
+
+            // // Speaker notes
+            // { src: 'plugin/notes/notes.js', async: true },
+
+            // MathJax
+            { src: 'revealjs/plugin/math/math.js', async: true }
         ]
+
     });
 </script>
 </body>

@@ -20,3 +20,17 @@ figcaption {
 .theorem {
     font-size: large;
 }
+
+.reveal .slide-number {
+    position: absolute;
+    display: block;
+    left: 8px;
+    right: unset;
+    bottom: 8px;
+    z-index: 31;
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 1;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 5px; }
