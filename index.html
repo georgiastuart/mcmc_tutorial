@@ -57,7 +57,7 @@
                     <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
                 </div>
                 <div class="col-9 my-auto">
-                    <h2 class="slide-title">Motivation: Earth Imaging</h2>
+                    <h2 class="slide-title">Motivation: Earth Properties</h2>
                 </div>
             </div>
             <hr/>
@@ -178,7 +178,7 @@
                             <ul class="content-list">
                                 <li>Generated a standard uniform random variable, \(U\).</li>
                                 <li>
-                                    Calculate \(X = F^{-1} (U)\) where \(F\) is the probability distribution of
+                                    Calculate \(X = F^{-1} (U)\) where \(F\) is the cumulative density function of
                                     interest.
                                 </li>
                             </ul>
@@ -188,7 +188,7 @@
             </div>
         </section>
 
-        <section id="inverse-sampling">
+        <section id="inverse-sampling-ex-1">
             <div class="row">
                 <div class="col-3">
                     <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
@@ -198,19 +198,52 @@
                 </div>
             </div>
             <hr/>
-            <div class="row">
-                <button type="button" class="btn btn-primary mx-auto mb-2" id="invButton">Start Simulation</button>
-                <button type="button" class="btn btn-danger mx-auto mb-2" id="stopInvButton">Stop Simulation</button>
-                <!--<button type="button" class="btn btn-primary mx-auto mb-2" id="resetInvButton">Reset Simulation</button>-->
-
+            <div class="row text-center">
+                <div class="col-12 text-center">
+                    PDF: \(f(x) = 1.5 e^{-1.5x}\,\,\,\)  CDF: \(F(x) = 1 - e^{-1.5x}\)
+                </div>
             </div>
+            <div class="row">
+                <img src="images/exponential.svg" alt="The Exponential Distribution" class="plain mx-auto">
+            </div>
+        </section>
+
+        <section id="inverse-sampling-ex-2">
+            <div class="row">
+                <div class="col-3">
+                    <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
+                </div>
+                <div class="col-9 my-auto">
+                    <h2 class="slide-title">An Example: Exponential Distribution</h2>
+                </div>
+            </div>
+            <hr/>
+            <div class="row text-center">
+                <div class="col-12 text-center">
+                PDF: \(f(x) = 1.5 e^{-1.5x}\,\,\,\)  CDF: \(F(x) = 1 - e^{-1.5x}\)
+                </div>
+            </div>
+            <br>
+
             <div class="row">
                 <div class="col-5">
                     \(U\)
                     <div id="utext"></div>
                     <div id="usim"></div>
                 </div>
-                <div class="col-2"></div>
+                <div class="col-2">
+                    <div class="container my-auto">
+                    <div class="row">
+                        <button type="button" class="btn btn-primary mx-auto mb-2" id="invButton">Start Simulation</button>
+
+                        <!--<button type="button" class="btn btn-primary mx-auto mb-2" id="resetInvButton">Reset Simulation</button>-->
+
+                    </div>
+                    <div class="row">
+                        <button type="button" class="btn btn-danger mx-auto mb-2" id="stopInvButton">Stop Simulation</button>
+                    </div>
+                    </div>
+                </div>
                 <div class="col-5">
                     \(X\)
                     <div id="xtext"></div>
@@ -252,6 +285,56 @@
                 </div>
             </div>
             <hr/>
+            <div class="row">
+                <img src="images/mcmcflowchart_no_inversion.svg" class="plain img-fluid" style="width: 100%" alt="MCMC Flowchart">
+            </div>
+        </section>
+
+        <section id="rws">
+            <div class="row">
+                <div class="col-3">
+                    <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
+                </div>
+                <div class="col-9 my-auto">
+                    <h2 class="slide-title">Random Walk Sampler</h2>
+                </div>
+            </div>
+            <hr/>
+            <div class="row">
+                <div class="col-5">
+                    <ul class="content-list">
+                        <li>A <span class="emph">random walk sampler</span> produces points to
+                            evaluate using a <span class="emph">random walk</span>.
+                        </li>
+                        <li>A random walk starts at the <span class="emph">preceding point</span> and takes a step in a
+                            <span class="emph">random direction</span>.
+                        </li>
+                        <li>The steps in a random walk are <span class="emph">correlated</span></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+
+                </div>
+            </div>
+        </section>
+
+        <section id="metropolis">
+            <div class="row">
+                <div class="col-3">
+                    <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
+                </div>
+                <div class="col-9 my-auto">
+                    <h2 class="slide-title">Accepting and Rejecting</h2>
+                </div>
+            </div>
+            <hr/>
+            <ul class="content-list">
+                <li>The <span class="emph">Metropolis criterion</span> determines whether a sample is accepted or rejected.</li>
+                <li>It's a <span class="emph">ratio</span> of the <span class="emph">posterior values:</span></li>
+                $$ \rho (\theta, \theta_n) = \min \left\{ \frac{P(\theta)}{P(\theta_n)}\right\} $$
+                <li>The sample \(\theta\) is <span class="emph">accepted or rejected</span> with probability</li>
+                $$ r(\theta, \theta_n) = \min\left\{1,\,\rho(\theta, \theta_n)\right\}$$
+            </ul>
         </section>
 
         <section id="mcmc-example">
@@ -294,6 +377,13 @@
                 </div>
             </div>
             <hr/>
+            <ul class="content-list">
+                <li>The <span class="emph">likelihood function</span> measures the misfit between the simulated data and the observed data.</li>
+                <li>A common shape for the likelihood function is <span class="emph">Gaussian</span>:
+                $$ P(d \vert \theta) = \exp \left(-\frac{\lVert d - \mathcal{F}(\theta)\rVert^2}{2\lVert d \rVert^2 \sigma^2}\right)$$
+                where \(\mathcal{F}(\theta)\) is the simulated data, \(d\) is the observed data, and \(\sigma\) is the precision parameter.</li>
+                <li>A Gaussian Likelihood <span class="emph">does not mean the posterior will be Gaussian</span>!</li>
+            </ul>
         </section>
 
         <section id="prior">
@@ -306,6 +396,7 @@
                 </div>
             </div>
             <hr/>
+
         </section>
 
         <section id="mcmc-inversion">
@@ -318,19 +409,11 @@
                 </div>
             </div>
             <hr/>
-
-        </section>
-        <section id="rws">
             <div class="row">
-                <div class="col-3">
-                    <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
-                </div>
-                <div class="col-9 my-auto">
-                    <h2 class="slide-title">Random Walk Sampler</h2>
-                </div>
+                <img src="images/mcmcflowchart.svg" class="plain img-fluid" style="width: 100%" alt="MCMC Flowchart">
             </div>
-            <hr/>
         </section>
+
 
         <section id="forward">
             <div class="row">
@@ -364,17 +447,7 @@
             </div>
         </section>
 
-        <section id="metropolis">
-            <div class="row">
-                <div class="col-3">
-                    <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
-                </div>
-                <div class="col-9 my-auto">
-                    <h2 class="slide-title">Metropolis Criterion</h2>
-                </div>
-            </div>
-            <hr/>
-        </section>
+
 
         <section id="mcmc-inversion-example">
             <div class="row">
