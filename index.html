@@ -631,17 +631,23 @@
                 </div>
                 <hr/>
             </div>
-        </section>
-
-        <section id="unknowns">
             <div class="row">
-                <div class="col-3">
-                    <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
+                <div class="col-7">
+                    <ul class="content-list">
+                        <li>HMC uses <span class="emph">Hamiltonian Mechanics</span> and
+                            <span class="emph">gradient information</span> of the posterior distribution to draw samples
+                        that are less correlated.</li>
+                        <li>Results in an algorithm that can handle higher dimensions and converges faster.</li>
+
+
+                    </ul>
                 </div>
-                <div class="col-9 my-auto">
-                    <h2 class="slide-title">Many unknowns!</h2>
+                <div class="col-5">
+                    <figure>
+                        <!--<img src="images/neal2011-1.png" alt="correlated RWS from Neal 2011" class="plain img-fluid">-->
+                        <figcaption>From Neal (2011) in <span style="font-style: italic">Handbook of Markov Chain Monte Carlo</span>.</figcaption>
+                    </figure>
                 </div>
-                <hr/>
             </div>
         </section>
 
@@ -667,6 +673,13 @@
                 </div>
                 <hr/>
             </div>
+            <div class="row">
+                <ul class="content-list">
+                    Reformulation of classical mechanics based on <span class="emph">Hamilton's Equations</span>, a system
+                    of differential equations.
+                </ul>
+                <ul>Predicts the same outcome as classical Newtonian Mechanics.</ul>
+            </div>
         </section>
 
         <section id="hamiltons-equations">
@@ -678,6 +691,16 @@
                     <h2 class="slide-title">Hamilton's Equations</h2>
                 </div>
                 <hr/>
+            </div>
+            <div class="row">
+                $$\frac{dq_i}{dt} = \frac{\partial H}{\partial p_i}$$
+                $$\frac{dp_i}{dt} = -\frac{\partial H}{\partial q_i}$$
+                <ul class="content-list">
+                    <li>\(H(q,\, p) = U(q) + K(p)\) is the total energy in the system.</li>
+                    <li>\(U(q)\) is the <span class="emph">potential energy</span>. </li>
+                    <li>\(U(p)\) is the <span class="emph">kinetic energy</span>. </li>
+                    <li>\(q\) is position, \(p\) is momentum.</li>
+                </ul>
             </div>
         </section>
 
