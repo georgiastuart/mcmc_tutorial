@@ -517,6 +517,22 @@
                 </div>
                 <hr/>
             </div>
+
+            <div class="row">
+                <div class="col-5">
+                    <ul class="content-list">
+                        <li>A parameter falls within a <span class="emph">credible interval</span> with a certain probability.</li>
+                        <li>Similar to <span class="emph">confidence intervals</span> in frequentist statistics.</li>
+                        <li>A 95% highest posterior density (HPD) is the <span class="emph">narrowest interval</span>
+                        containing 95% of the posterior distribution.</li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <figure>
+                        <figcaption>A posterior distribution with the HPD interval and equal-tailed interval.</figcaption>
+                    </figure>
+                </div>
+            </div>
         </section>
 
         <section id="kde">
@@ -528,6 +544,24 @@
                     <h2 class="slide-title">Kernel Density Estimates (KDE)</h2>
                 </div>
                 <hr/>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <figure>
+                        <figcaption>A histogram of the posterior distribution, KDE, and a selection of kernels.</figcaption>
+                    </figure>
+                </div>
+                <div class="col-5">
+                    <ul class="content-list">
+                        <li><span class="emph">Kernel density estimation (KDE)</span> gives a probability distribution from a collection of
+                        samples.</li>
+                        <li>Each sample forms a <span class="emph">kernel</span> which are then summed together.</li>
+                        <li>$$\hat{f}(\theta) = \frac{1}{n} \sum_{i=1}^{n} K_h(\theta - \theta_i)$$
+                        where \(n\) is the number of samples and \(K_h\) is the kernel with bandwith \(h\).</li>
+                    </ul>
+                </div>
+
             </div>
         </section>
 
@@ -541,6 +575,20 @@
                 </div>
                 <hr/>
             </div>
+            <div class="row">
+                <div class="col-4 my-auto">
+                    <figure>
+                        <img src="images/velocity_posteriors.png" alt="Velocity posterior distributions" class="plain img-fluid my-auto">
+                        <figcaption>Three posterior distributions corresponding with the labeled layers in the right figure.</figcaption>
+                    </figure>
+                </div>
+                <div class="col-8 my-auto">
+                    <figure>
+                        <img src="images/au_oned.png" alt="One d slice with HPD intervals" class="plain img-fluid my-auto">
+                        <figcaption>A one dimensional slice of the velocity field with 90% HPD intervals.</figcaption>
+                    </figure>
+                </div>
+            </div>
         </section>
 
         <section id="problems">
@@ -552,6 +600,24 @@
                     <h2 class="slide-title">The Problem with Random Walk Sampling</h2>
                 </div>
                 <hr/>
+            </div>
+            <div class="row">
+                <div class="col-7">
+                    <ul class="content-list">
+                        <li>In <span class="emph">theory</span>, MCMC will converge to the posterior distribution.</li>
+                        <li>In <span class="emph">practice</span>, methods based on Random Walk Sampling (RWS) can only
+                            handle a limited number of unkowns (<100 in my experience).</li>
+                        <li>RWS produces samples that are <span class="emph">highly correlated</span>.</li>
+
+
+                    </ul>
+                </div>
+                <div class="col-5">
+                    <figure>
+                        <img src="images/neal2011-1.png" alt="correlated RWS from Neal 2011" class="plain img-fluid">
+                        <figcaption>From Neal (2011) in <span style="font-style: italic">Handbook of Markov Chain Monte Carlo</span>.</figcaption>
+                    </figure>
+                </div>
             </div>
         </section>
 
