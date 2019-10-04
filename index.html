@@ -723,7 +723,7 @@
                 </div>
                 <div class="col-5">
                     <figure>
-                        <!--<img src="images/neal2011-1.png" alt="correlated RWS from Neal 2011" class="plain img-fluid">-->
+                        <img src="images/neal2011-2.png" alt="HMC from Neal 2011" class="plain img-fluid">
                         <figcaption>From Neal (2011) in <span style="font-style: italic">Handbook of Markov Chain Monte Carlo</span>.</figcaption>
                     </figure>
                 </div>
@@ -747,24 +747,24 @@
 
         </section>
 
-        <section id="hamiltonian-mechanics">
-            <div class="row">
-                <div class="col-3">
-                    <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
-                </div>
-                <div class="col-9 my-auto">
-                    <h2 class="slide-title">Hamiltonian Mechanics</h2>
-                </div>
-                <hr/>
-            </div>
-            <div class="row">
-                <ul class="content-list">
-                    Reformulation of classical mechanics based on <span class="emph">Hamilton's Equations</span>, a system
-                    of differential equations.
-                </ul>
-                <ul>Predicts the same outcome as classical Newtonian Mechanics.</ul>
-            </div>
-        </section>
+        <!--<section id="hamiltonian-mechanics">-->
+            <!--<div class="row">-->
+                <!--<div class="col-3">-->
+                    <!--<img src="images/logo.png" alt="UT Dallas Logo" class="plain">-->
+                <!--</div>-->
+                <!--<div class="col-9 my-auto">-->
+                    <!--<h2 class="slide-title">Hamiltonian Mechanics</h2>-->
+                <!--</div>-->
+                <!--<hr/>-->
+            <!--</div>-->
+            <!--<div class="row">-->
+                <!--<ul class="content-list">-->
+                    <!--Reformulation of classical mechanics based on <span class="emph">Hamilton's Equations</span>, a system-->
+                    <!--of differential equations.-->
+                <!--</ul>-->
+                <!--<ul>Predicts the same outcome as classical Newtonian Mechanics.</ul>-->
+            <!--</div>-->
+        <!--</section>-->
 
         <section id="hamiltons-equations">
             <div class="row">
@@ -774,8 +774,9 @@
                 <div class="col-9 my-auto">
                     <h2 class="slide-title">Hamilton's Equations</h2>
                 </div>
-                <hr/>
             </div>
+            <hr/>
+
             <div class="row">
                 $$\frac{dq_i}{dt} = \frac{\partial H}{\partial p_i}$$
                 $$\frac{dp_i}{dt} = -\frac{\partial H}{\partial q_i}$$
@@ -788,17 +789,29 @@
             </div>
         </section>
 
-        <section id="discretizing">
+        <section id="hamiltons-equations-2">
             <div class="row">
                 <div class="col-3">
                     <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
                 </div>
                 <div class="col-9 my-auto">
-                    <h2 class="slide-title">Discretizing Hamilton's Equations</h2>
+                    <h2 class="slide-title">Hamilton's Equations</h2>
                 </div>
-                <hr/>
+
+            </div>
+            <hr/>
+            <div class="row">
+                    Assume $$K(p) = \frac{1}{2} p^T M^{-1} p $$
+                then Hamilton's equations are of the form
+                $$ \frac{dq_i}{dt} = [M^{-1}p]_i$$
+                $$\frac{dp_i}{dt} = -\frac{\partial U}{\partial q_i}$$
+                <ul>
+                Which are <span class="emph">velocity</span> and <span class="emph">force</span>!
+                </ul>
             </div>
         </section>
+
+
 
         <section id="posterior">
             <div class="row">
@@ -808,7 +821,43 @@
                 <div class="col-9 my-auto">
                     <h2 class="slide-title">Connecting Hamilton's Equations to the Posterior Distribution</h2>
                 </div>
-                <hr/>
+
+            </div>
+            <hr/>
+            <br>
+            <div class="row">
+                <ul class="content-list">
+                    <li>The posterior distribution is embedded in the <span class="emph">potential energy</span>.
+                    $$ U(\theta) = -\log\left(P(\theta \vert d)\right) = -\log\left(P(\theta)P(d \vert \theta)\right)$$
+                        $$= -\log(P(\theta)) - log(P(d\vert\theta)$$
+                    </li>
+                    <li>
+                        For Hamilton's equations, we need the <span class="emph">gradient</span> of the log prior and
+                        log likelihood.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="discretizing">
+            <div class="row">
+                <div class="col-3">
+                    <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
+                </div>
+                <div class="col-9 my-auto">
+                    <h2 class="slide-title">Discretizing Hamilton's Equations</h2>
+                </div>
+
+            </div>
+            <hr/>
+
+            <div class="row">
+                <ul>
+                    Hamilton's equation are typically discretized with the <span class="emph">leapfrog method</span>.
+                </ul>
+                $$p_i\left(t + \frac{\epsilon}{2}\right) = p_i(t) - \frac{\epsilon}{2}\frac{\partial U}{\partial q_i}\left( q(t)\right)$$
+                $$q_i(t+\epsilon) = q_i(t) + \epsilon \frac{p_i\left(t + \frac{\epsilon}{2}\right)}{m_i}$$
+                $$p_i\left(t + \epsilon\right) = p_i\left(t + \frac{\epsilon}{2}\right) - \frac{\epsilon}{2}\frac{\partial U}{\partial q_i}\left( q(t + \epsilon)\right)$$
             </div>
         </section>
 
@@ -822,19 +871,23 @@
                 </div>
                 <hr/>
             </div>
+            <br>
+            <br>
+            <br>
+            <a href="https://chi-feng.github.io/mcmc-demo/app.html" target="_blank">Hamiltonian Monte Carlo Simulation from Chi Feng</a>
         </section>
 
-        <section id="hmc-inversion">
-            <div class="row">
-                <div class="col-3">
-                    <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
-                </div>
-                <div class="col-9 my-auto">
-                    <h2 class="slide-title">Inversion with HMC</h2>
-                </div>
-                <hr/>
-            </div>
-        </section>
+        <!--<section id="hmc-inversion">-->
+            <!--<div class="row">-->
+                <!--<div class="col-3">-->
+                    <!--<img src="images/logo.png" alt="UT Dallas Logo" class="plain">-->
+                <!--</div>-->
+                <!--<div class="col-9 my-auto">-->
+                    <!--<h2 class="slide-title">Inversion with HMC</h2>-->
+                <!--</div>-->
+                <!--<hr/>-->
+            <!--</div>-->
+        <!--</section>-->
 
         <section>
         <section id="gradient">
@@ -843,9 +896,27 @@
                     <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
                 </div>
                 <div class="col-9 my-auto">
-                    <h2 class="slide-title">Computing the Gradient</h2>
+                    <h2 class="slide-title">Computing the Gradient of the Likelihood</h2>
                 </div>
-                <hr/>
+            </div>
+            <hr/>
+            <div class="row">
+                <div class="col-6">
+                <ul class="content-list">
+                    <li>Assume the likelihood is <span class="emph">Gaussian</span>
+                        $$ P(d \vert \theta) = \exp \left(-\frac{\lVert d - \mathcal{F}(\theta)\rVert^2}{2\lVert d \rVert^2 \sigma^2}\right)$$
+                    <li>
+                        The <span class="emph">negative log likelihood</span> is then
+                        $$-\log(d \vert \theta) = \frac{\lVert d - \mathcal{F}(\theta)\rVert^2}{2\lVert d \rVert^2 \sigma^2}$$
+                    </li>
+                    <li>Compute using the <span class="emph">adjoint state method</span>.</li>
+                </ul>
+                </div>
+                <div class="col-6">
+                    <figure>
+                        <figcaption>The initial field (top), reference velocity (center), and gradient (bottom).</figcaption>
+                    </figure>
+                </div>
             </div>
 
         </section>
