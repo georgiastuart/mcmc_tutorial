@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1152 648" style="enable-background:new 0 0 1152 648;" xml:space="preserve">
+	 viewBox="0 0 629 344" style="enable-background:new 0 0 629 344;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#909090;}
 	.st1{fill:#FFFFFF;stroke:#E36F1E;stroke-width:3;stroke-miterlimit:10;}
@@ -24,144 +24,141 @@
 <g>
 	<g>
 		<g>
-			<polygon class="st0" points="648.91,193.5 648.91,230.71 637.35,230.71 650.5,253.5 663.65,230.71 652.09,230.71 652.09,193.5 
+			<polygon class="st0" points="409.91,62.5 409.91,99.71 398.35,99.71 411.5,122.5 424.65,99.71 413.09,99.71 413.09,62.5 			"/>
+		</g>
+	</g>
+</g>
+<rect x="308.5" y="5.5" class="st1" width="206" height="57"/>
+<rect x="326.43" y="18.21" class="st2" width="171.57" height="37.79"/>
+<text transform="matrix(1 0 0 1 345.9102 30.9927)"><tspan x="0" y="0" class="st3 st4">Generate random</tspan><tspan x="21.4" y="21.6" class="st3 st4">momentum</tspan></text>
+<rect x="308.5" y="122.5" class="st1" width="206" height="70"/>
+<rect x="325.43" y="129" class="st2" width="171.57" height="65.7"/>
+<text transform="matrix(1 0 0 1 342.6699 141.7798)"><tspan x="0" y="0" class="st3 st4">Solve Hamiltonian </tspan><tspan x="-11.23" y="21.6" class="st3 st4">Dynamics for  n time</tspan><tspan x="142.79" y="21.6" class="st3 st4">-</tspan><tspan x="48.81" y="43.2" class="st3 st4">steps</tspan></text>
+<rect x="308.5" y="252.5" class="st1" width="206" height="87"/>
+<rect x="326.43" y="272.21" class="st2" width="171.57" height="17.79"/>
+<text transform="matrix(1 0 0 1 337.1001 284.9927)" class="st3 st4">Metropolis Criterion</text>
+<path class="st5" d="M811.5,165.5"/>
+<rect x="7.5" y="261.5" class="st1" width="206" height="70"/>
+<rect x="25.43" y="277.39" class="st2" width="171.57" height="40.61"/>
+<text transform="matrix(1 0 0 1 56.2773 290.1724)"><tspan x="0" y="0" class="st3 st4">Update step in</tspan><tspan x="4.55" y="21.6" class="st3 st4">Markov chain</tspan></text>
+<path class="st6" d="M383.5,400.5"/>
+<rect x="539.86" y="275.35" class="st2" width="94.6" height="15.77"/>
+<text transform="matrix(1 0 0 1 539.8574 288.1299)" class="st3 st4">Reject</text>
+<rect x="240.86" y="275.35" class="st2" width="94.6" height="15.77"/>
+<text transform="matrix(1 0 0 1 240.8574 288.1299)" class="st3 st4">Accept</text>
+<g>
+	<g>
+		<g>
+			<polygon class="st0" points="409.91,192.5 409.91,229.72 398.35,229.72 411.5,252.5 424.65,229.72 413.09,229.72 413.09,192.5 
 							"/>
 		</g>
 	</g>
 </g>
-<rect x="547.5" y="136.5" class="st1" width="206" height="57"/>
-<rect x="565.43" y="149.21" class="st2" width="171.57" height="37.79"/>
-<text transform="matrix(1 0 0 1 584.9102 161.9927)"><tspan x="0" y="0" class="st3 st4">Generate random</tspan><tspan x="21.4" y="21.6" class="st3 st4">momentum</tspan></text>
-<rect x="547.5" y="253.5" class="st1" width="206" height="70"/>
-<rect x="564.43" y="260" class="st2" width="171.57" height="65.7"/>
-<text transform="matrix(1 0 0 1 581.6699 272.7798)"><tspan x="0" y="0" class="st3 st4">Solve Hamiltonian </tspan><tspan x="-11.23" y="21.6" class="st3 st4">Dynamics for  n time</tspan><tspan x="142.79" y="21.6" class="st3 st4">-</tspan><tspan x="48.81" y="43.2" class="st3 st4">steps</tspan></text>
-<rect x="547.5" y="383.5" class="st1" width="206" height="87"/>
-<rect x="565.43" y="403.21" class="st2" width="171.57" height="17.79"/>
-<text transform="matrix(1 0 0 1 576.1001 415.9927)" class="st3 st4">Metropolis Criterion</text>
-<path class="st5" d="M1050.5,296.5"/>
-<rect x="246.5" y="392.5" class="st1" width="206" height="70"/>
-<rect x="264.43" y="408.39" class="st2" width="171.57" height="40.61"/>
-<text transform="matrix(1 0 0 1 295.2773 421.1724)"><tspan x="0" y="0" class="st3 st4">Update step in</tspan><tspan x="4.55" y="21.6" class="st3 st4">Markov chain</tspan></text>
-<path class="st6" d="M622.5,531.5"/>
-<rect x="778.86" y="406.35" class="st2" width="94.6" height="15.77"/>
-<text transform="matrix(1 0 0 1 778.8574 419.1299)" class="st3 st4">Reject</text>
-<rect x="479.86" y="406.35" class="st2" width="94.6" height="15.77"/>
-<text transform="matrix(1 0 0 1 479.8574 419.1299)" class="st3 st4">Accept</text>
+<line class="st6" x1="514.5" y1="296.5" x2="622.5" y2="296.5"/>
+<line class="st6" x1="622.5" y1="25.5" x2="622.5" y2="296.5"/>
 <g>
 	<g>
 		<g>
-			<polygon class="st0" points="648.91,323.5 648.91,360.72 637.35,360.72 650.5,383.5 663.65,360.72 652.09,360.72 652.09,323.5 
-							"/>
-		</g>
-	</g>
-</g>
-<line class="st6" x1="753.5" y1="427.5" x2="861.5" y2="427.5"/>
-<line class="st6" x1="861.5" y1="156.5" x2="861.5" y2="427.5"/>
-<g>
-	<g>
-		<g>
-			<polygon class="st0" points="861.5,154.91 776.28,154.91 776.28,143.35 753.5,156.5 776.28,169.65 776.28,158.09 861.5,158.09 
-							"/>
+			<polygon class="st0" points="622.5,23.91 537.28,23.91 537.28,12.35 514.5,25.5 537.28,38.65 537.28,27.09 622.5,27.09 			"/>
 		</g>
 	</g>
 </g>
 <g>
 	<g>
 		<g>
-			<polygon class="st0" points="547.5,423.91 475.28,423.91 475.28,412.35 452.5,425.5 475.28,438.65 475.28,427.09 547.5,427.09 
+			<polygon class="st0" points="308.5,292.91 236.28,292.91 236.28,281.35 213.5,294.5 236.28,307.65 236.28,296.09 308.5,296.09 
 							"/>
 		</g>
 	</g>
 </g>
-<line class="st6" x1="350.5" y1="392.5" x2="350.5" y2="156.5"/>
+<line class="st6" x1="111.5" y1="261.5" x2="111.5" y2="25.5"/>
 <g>
 	<g>
 		<g>
-			<polygon class="st0" points="350.5,158.09 524.72,158.09 524.72,169.65 547.5,156.5 524.72,143.35 524.72,154.91 350.5,154.91 
-							"/>
+			<polygon class="st0" points="111.5,27.09 285.72,27.09 285.72,38.65 308.5,25.5 285.72,12.35 285.72,23.91 111.5,23.91 			"/>
 		</g>
 	</g>
 </g>
 <g>
 	<g>
 		<defs>
-			<rect id="SVGID_1_" x="554" y="439" width="187" height="9.41"/>
+			<rect id="SVGID_1_" x="315" y="308" width="187" height="9.41"/>
 		</defs>
 		<clipPath id="SVGID_2_">
 			<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
 		</clipPath>
 		<g class="st7">
 			<defs>
-				<rect id="SVGID_3_" x="554" y="439" width="187" height="9.41"/>
+				<rect id="SVGID_3_" x="315" y="308" width="187" height="9.41"/>
 			</defs>
 			<clipPath id="SVGID_4_">
 				<use xlink:href="#SVGID_3_"  style="overflow:visible;"/>
 			</clipPath>
 			<g class="st8">
-				<text transform="matrix(1 0 0 1 553.792 446.0342)" class="st9 st10">ρ</text>
+				<text transform="matrix(1 0 0 1 314.792 315.0342)" class="st9 st10">ρ</text>
 			</g>
 			<g class="st8">
-				<text transform="matrix(1 0 0 1 560.0303 446.0342)" class="st11 st10">(</text>
+				<text transform="matrix(1 0 0 1 321.0303 315.0342)" class="st11 st10">(</text>
 			</g>
 			<g class="st8">
-				<text transform="matrix(1 0 0 1 563.5791 446.0342)"><tspan x="0" y="0" class="st9 st10">q</tspan><tspan x="5.47" y="0" class="st9 st10 st12">,</tspan><tspan x="8.88" y="0" class="st9 st10">q</tspan></text>
+				<text transform="matrix(1 0 0 1 324.5791 315.0342)"><tspan x="0" y="0" class="st9 st10">q</tspan><tspan x="5.47" y="0" class="st9 st10 st12">,</tspan><tspan x="8.88" y="0" class="st9 st10">q</tspan></text>
 			</g>
 			<g class="st8">
-				<text transform="matrix(1 0 0 1 576.1094 447.4033)" class="st13 st14">n</text>
+				<text transform="matrix(1 0 0 1 337.1094 316.4033)" class="st13 st14">n</text>
 			</g>
 			<g class="st8">
-				<text transform="matrix(1 0 0 1 581.0762 446.0342)"><tspan x="0" y="0" class="st11 st10 st15">)=</tspan><tspan x="13.1" y="0" class="st11 st10">min</tspan></text>
+				<text transform="matrix(1 0 0 1 342.0762 315.0342)"><tspan x="0" y="0" class="st11 st10 st15">)=</tspan><tspan x="13.1" y="0" class="st11 st10">min</tspan></text>
 			</g>
 			<g class="st8">
-				<text transform="matrix(1 0 0 1 616.5625 446.0342)" class="st16 st10">{</text>
+				<text transform="matrix(1 0 0 1 377.5625 315.0342)" class="st16 st10">{</text>
 			</g>
 			<g class="st8">
-				<text transform="matrix(1 0 0 1 621.125 446.0342)" class="st11 st10">1</text>
+				<text transform="matrix(1 0 0 1 382.125 315.0342)" class="st11 st10">1</text>
 			</g>
 			<g class="st8">
-				<text transform="matrix(1 0 0 1 625.6865 446.0342)" class="st9 st10">,</text>
+				<text transform="matrix(1 0 0 1 386.6865 315.0342)" class="st9 st10">,</text>
 			</g>
 			<g class="st8">
-				<text transform="matrix(1 0 0 1 631.2627 446.0342)" class="st11 st10">exp(</text>
+				<text transform="matrix(1 0 0 1 392.2627 315.0342)" class="st11 st10">exp(</text>
 			</g>
 			<g class="st8">
-				<text transform="matrix(1 0 0 1 648.7529 446.0342)" class="st16 st10">−</text>
+				<text transform="matrix(1 0 0 1 409.7529 315.0342)" class="st16 st10">−</text>
 			</g>
 			<g class="st8">
-				<text transform="matrix(1 0 0 1 655.8496 446.0342)" class="st9 st10">H</text>
+				<text transform="matrix(1 0 0 1 416.8496 315.0342)" class="st9 st10">H</text>
 			</g>
 			<g class="st8">
-				<text transform="matrix(1 0 0 1 664.1768 446.0342)" class="st11 st10">(</text>
+				<text transform="matrix(1 0 0 1 425.1768 315.0342)" class="st11 st10">(</text>
 			</g>
 			<g class="st8">
-				<text transform="matrix(1 0 0 1 667.7246 446.0342)"><tspan x="0" y="0" class="st9 st10">q</tspan><tspan x="5.47" y="0" class="st9 st10 st12">,</tspan><tspan x="8.88" y="0" class="st9 st10">p</tspan></text>
+				<text transform="matrix(1 0 0 1 428.7246 315.0342)"><tspan x="0" y="0" class="st9 st10">q</tspan><tspan x="5.47" y="0" class="st9 st10 st12">,</tspan><tspan x="8.88" y="0" class="st9 st10">p</tspan></text>
 			</g>
 			<g class="st8">
-				<text transform="matrix(1 0 0 1 680.7734 446.0342)"><tspan x="0" y="0" class="st11 st10 st15">)</tspan><tspan x="4.62" y="0" class="st11 st10">+</tspan></text>
+				<text transform="matrix(1 0 0 1 441.7734 315.0342)"><tspan x="0" y="0" class="st11 st10 st15">)</tspan><tspan x="4.62" y="0" class="st11 st10">+</tspan></text>
 			</g>
 			<g class="st8">
-				<text transform="matrix(1 0 0 1 695.4736 446.0342)" class="st9 st10">H</text>
+				<text transform="matrix(1 0 0 1 456.4736 315.0342)" class="st9 st10">H</text>
 			</g>
 			<g class="st8">
-				<text transform="matrix(1 0 0 1 703.7998 446.0342)" class="st11 st10">(</text>
+				<text transform="matrix(1 0 0 1 464.7998 315.0342)" class="st11 st10">(</text>
 			</g>
 			<g class="st8">
-				<text transform="matrix(1 0 0 1 707.3486 446.0342)" class="st9 st10">q</text>
+				<text transform="matrix(1 0 0 1 468.3486 315.0342)" class="st9 st10">q</text>
 			</g>
 			<g class="st8">
-				<text transform="matrix(1 0 0 1 711.4219 447.4033)" class="st13 st14">n</text>
+				<text transform="matrix(1 0 0 1 472.4219 316.4033)" class="st13 st14">n</text>
 			</g>
 			<g class="st8">
-				<text transform="matrix(1 0 0 1 716.3887 446.0342)"><tspan x="0" y="0" class="st9 st10 st12">,</tspan><tspan x="3.41" y="0" class="st9 st10">p</tspan></text>
+				<text transform="matrix(1 0 0 1 477.3887 315.0342)"><tspan x="0" y="0" class="st9 st10 st12">,</tspan><tspan x="3.41" y="0" class="st9 st10">p</tspan></text>
 			</g>
 			<g class="st8">
-				<text transform="matrix(1 0 0 1 725.0352 447.4033)" class="st13 st14">n</text>
+				<text transform="matrix(1 0 0 1 486.0352 316.4033)" class="st13 st14">n</text>
 			</g>
 			<g class="st8">
-				<text transform="matrix(1 0 0 1 730.0029 446.0342)" class="st11 st10">))</text>
+				<text transform="matrix(1 0 0 1 491.0029 315.0342)" class="st11 st10">))</text>
 			</g>
 			<g class="st8">
-				<text transform="matrix(1 0 0 1 737.0996 446.0342)" class="st16 st10">}</text>
+				<text transform="matrix(1 0 0 1 498.0996 315.0342)" class="st16 st10">}</text>
 			</g>
 		</g>
 	</g>
