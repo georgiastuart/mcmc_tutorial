@@ -347,7 +347,7 @@
             <ul class="content-list">
                 <li>The <span class="emph">Metropolis criterion</span> determines whether a sample is accepted or rejected.</li>
                 <li>It's a <span class="emph">ratio</span> of the <span class="emph">posterior values:</span></li>
-                $$ \rho (\theta, \theta_n) = \min \left\{ \frac{P(\theta)g(\theta_n \vert \theta)}{P(\theta_n)g(\theta \vert \theta_n)}\right\} $$
+                $$ \rho (\theta, \theta_n) =  \frac{P(\theta)g(\theta_n \vert \theta)}{P(\theta_n)g(\theta \vert \theta_n)} $$
                 where \(g(\theta \vert \theta_n)\) is the transition probability.
                 <li>The sample \(\theta\) is <span class="emph">accepted or rejected</span> with probability</li>
                 $$ r(\theta, \theta_n) = \min\left\{1,\,\rho(\theta, \theta_n)\right\}$$
@@ -899,7 +899,7 @@
             <!--</div>-->
         <!--</section>-->
 
-        <section>
+        <!--<section>-->
         <section id="gradient">
             <div class="row">
                 <div class="col-3">
@@ -911,7 +911,7 @@
             </div>
             <hr/>
             <div class="row">
-                <div class="col-6">
+                <!--<div class="col-6">-->
                 <ul class="content-list">
                     <li>Assume the likelihood is <span class="emph">Gaussian</span>
                         $$ P(d \vert \theta) = \exp \left(-\frac{\lVert d - \mathcal{F}(\theta)\rVert^2}{2\lVert d \rVert^2 \sigma^2}\right)$$
@@ -921,27 +921,27 @@
                     </li>
                     <li>Compute using the <span class="emph">adjoint state method</span>.</li>
                 </ul>
-                </div>
-                <div class="col-6">
-                    <figure>
-                        <figcaption>The initial field (top), reference velocity (center), and gradient (bottom).</figcaption>
-                    </figure>
-                </div>
+                <!--</div>-->
+                <!--<div class="col-6">-->
+                    <!--<figure>-->
+                        <!--<figcaption>The initial field (top), reference velocity (center), and gradient (bottom).</figcaption>-->
+                    <!--</figure>-->
+                <!--</div>-->
             </div>
 
         </section>
-        <section id="asm">
-            <div class="row">
-                <div class="col-3">
-                    <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
-                </div>
-                <div class="col-9 my-auto">
-                    <h2 class="slide-title">The Adjoint State Method</h2>
-                </div>
-                <hr/>
-            </div>
-        </section>
-        </section>
+        <!--<section id="asm">-->
+            <!--<div class="row">-->
+                <!--<div class="col-3">-->
+                    <!--<img src="images/logo.png" alt="UT Dallas Logo" class="plain">-->
+                <!--</div>-->
+                <!--<div class="col-9 my-auto">-->
+                    <!--<h2 class="slide-title">The Adjoint State Method</h2>-->
+                <!--</div>-->
+                <!--<hr/>-->
+            <!--</div>-->
+        <!--</section>-->
+        <!--</section>-->
 
 
         <section id="hmc-inversion-example">
@@ -978,6 +978,27 @@
                     </figure>
 
                 </div>
+            </div>
+        </section>
+
+        <section id="references">
+            <div class="row">
+                <div class="col-3">
+                    <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
+                </div>
+                <div class="col-9 my-auto">
+                    <h2 class="slide-title">References</h2>
+                </div>
+            </div>
+            <hr/>
+            <div class="row">
+                <ul class="content-list">
+                    <li>Neal, R. M., 2011, MCMC using Hamiltonian dynamics, in S. Brooks, A. Gelman, G. L. Jones, and X.-L. Meng, eds., Handbook of Markov Chain Monte Carlo, Handbooks of Modern Statistical MethodsChapman & Hall / CRC, 113–162.</li>
+                    <li>Stuart, G. K., S. E. Minkoff, and F. Pereira, 2019, A Two-Stage Markov Chain Monte Carlo Method for Seismic Inversion and Uncertainty Quantification: Geophysics. (To Appear)</li>
+                    <li>Stuart, G. K., S. E. Minkoff, and F. Pereira, 2019, Enhanced neural network sampling for two-stage Markov chain Monte Carlo seismic inversion: SEG Technical Program Expanded Abstracts 2019, 5, 1665–1669.</li>
+                    <li>Stuart, G., W. Yang, S. Minkoff, and F. Pereira, 2016, A two-stage Markov chain Monte Carlo method for velocity estimation and uncertainty quantification: SEG Technical Program.</li>
+
+                </ul>
             </div>
         </section>
 
