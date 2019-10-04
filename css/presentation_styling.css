@@ -38,3 +38,12 @@ figcaption {
 .histogram {
     fill: cornflowerblue;
 }
+
+.rws {
+    fill: cornflowerblue;
+}
+
+.line {
+    fill: none;
+    stroke: orange;
+}

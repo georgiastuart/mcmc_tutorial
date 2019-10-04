@@ -313,7 +313,13 @@
                     </ul>
                 </div>
                 <div class="col-6">
-
+                    <div class="container my-auto">
+                        <div class="row">
+                            <button type="button" class="btn btn-primary mx-auto mb-2" id="rwsButton">Start Simulation</button>
+                            <button type="button" class="btn btn-danger mx-auto mb-2" id="stopRwsButton">Stop Simulation</button>
+                        </div>
+                    </div>
+                    <div id="rwsSimulation"></div>
                 </div>
             </div>
         </section>
@@ -809,6 +815,7 @@
 <script src="revealjs/js/reveal.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 <script src="simulations/inverse.js"></script>
+<script src="simulations/random_walk.js"></script>
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <!--<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>-->
