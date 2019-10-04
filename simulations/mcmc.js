@@ -83,9 +83,25 @@
         .append("text")
         .text("Previously Accepted: " + previous);
 
+    let tb_prev_post = d3.select("#mcmc-prev-post")
+        .append("text")
+        .text("Previous posterior value: ");
+
     let tb_next = d3.select("#mcmc-next")
         .append("text")
         .text("Proposed: ");
+
+    let tb_next_post = d3.select("#mcmc-next-post")
+        .append("text")
+        .text("Proposed posterior value: ");
+
+    let tb_met = d3.select("#mcmc-met")
+        .append("text")
+        .text("Metropolis Criterion: ");
+
+    let tb_num = d3.select("#mcmc-num")
+        .append("text")
+        .text("Number tried: 0");
 
     let tb_acc = d3.select("#mcmc-accepted")
         .append("text")
@@ -107,7 +123,13 @@
             let threshold = Math.random();
 
             tb_prev.text("Previously Accepted: " + previous.toFixed(2));
+            tb_prev_post.text("Previous posterior value: " + gaussian(previous).toFixed(2));
             tb_next.text("Proposed: " + next.toFixed(2));
+            tb_next_post.text("Proposed posterior value: " + gaussian(next).toFixed(2));
+
+            tb_met.text("Metropolis Criterion: " + Math.min(1, (gaussian(next) / gaussian(previous))).toFixed(2));
+
+            tb_num.text("Number tried: " + count);
 
             if (threshold < (gaussian(next) / gaussian(previous))) {
                 histogram(next, hist_bounds, hist_counts);
@@ -147,6 +169,15 @@
         .on("click", () => {
             console.log("Inverse Sampling Simulation Started");
             stop = false;
+            delay = 2000;
+            mcmc();
+        });
+
+    d3.select("#mcmcButtonFast")
+        .on("click", () => {
+            console.log("Inverse Sampling Simulation Started");
+            stop = false;
+            delay = 250;
             mcmc();
         });
 

@@ -46,12 +46,14 @@
     let u_textbox = d3.select("#utext")
         .data(test_data)
         .append("p")
-        .text("Standard uniform draw: 0.000000");
+        .text("Standard uniform draw:")
+        .attr("class", "inv-text");
 
     let x_textbox = d3.select("#xtext")
         .data(test_data)
         .append("p")
-        .text("Calculated exponential draw: 0.000000");
+        .text("Calculated exponential draw:")
+        .attr("class", "inv-text");
 
     let u_data = [];
     let x_data = [];
@@ -118,8 +120,8 @@
             u_data.push(u);
             x_data.push(x);
 
-            u_textbox.text("Standard uniform draw: " + u);
-            x_textbox.text("Calculated exponential draw: " + x);
+            u_textbox.text("Standard uniform draw: " + u.toFixed(2));
+            x_textbox.text("Calculated exponential draw: " + x.toFixed(2));
 
 
             histogram(u, u_hist_bounds, u_hist_counts);

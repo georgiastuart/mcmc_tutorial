@@ -337,7 +337,8 @@
             <ul class="content-list">
                 <li>The <span class="emph">Metropolis criterion</span> determines whether a sample is accepted or rejected.</li>
                 <li>It's a <span class="emph">ratio</span> of the <span class="emph">posterior values:</span></li>
-                $$ \rho (\theta, \theta_n) = \min \left\{ \frac{P(\theta)}{P(\theta_n)}\right\} $$
+                $$ \rho (\theta, \theta_n) = \min \left\{ \frac{P(\theta)g(\theta_n \vert \theta)}{P(\theta_n)g(\theta \vert \theta_n)}\right\} $$
+                where \(g(\theta \vert \theta_n)\) is the transition probability.
                 <li>The sample \(\theta\) is <span class="emph">accepted or rejected</span> with probability</li>
                 $$ r(\theta, \theta_n) = \min\left\{1,\,\rho(\theta, \theta_n)\right\}$$
             </ul>
@@ -356,17 +357,22 @@
             <div class="row">
                 <div class="container my-auto">
                     <div class="row">
-                        <button type="button" class="btn btn-primary mx-auto mb-2" id="mcmcButton">Start Simulation</button>
+                        <button type="button" class="btn btn-primary mx-auto mb-2" id="mcmcButton">Start Simulation (Slow)</button>
+                        <button type="button" class="btn btn-primary mx-auto mb-2" id="mcmcButtonFast">Start Simulation (Fast)</button>
                         <button type="button" class="btn btn-danger mx-auto mb-2" id="stopMcmcButton">Stop Simulation</button>
                     </div>
                 </div>
                 <div class="col-6"><div id="mcmcSim"></div></div>
                 <div class="col-6">
-                    <div class="row"><div id="mcmc-prev"></div></div>
-                    <div class="row"><div id="mcmc-next"></div></div>
-                    <div class="row"><div id="mcmc-accepted"></div></div>
-                    <div class="row"><div id="mcmc-ratio"></div></div>
-                    <div class="row"><div id="step-length"></div></div>
+                    <div class="row"><div id="mcmc-prev" class="my-1"></div></div>
+                    <div class="row"><div id="mcmc-prev-post" class="my-1"></div></div>
+                    <div class="row"><div id="mcmc-next" class="my-1"></div></div>
+                    <div class="row"><div id="mcmc-next-post" class="my-1"></div></div>
+                    <div class="row"><div id="mcmc-met" class="my-1"></div></div>
+                    <div class="row"><div id="mcmc-num" class="my-1"></div></div>
+                    <div class="row"><div id="mcmc-accepted" class="my-1"></div></div>
+                    <div class="row"><div id="mcmc-ratio" class="my-1"></div></div>
+                    <div class="row"><div id="step-length" class="my-1"></div></div>
                 </div>
             </div>
         </section>
@@ -418,7 +424,13 @@
                 </div>
             </div>
             <hr/>
-
+            <br>
+            <br>
+            <ul class="content-list">
+                <li>The <span class="emph">prior distribution</span> is determined by what we know about the parameter prior to simulation.
+                <br><br></li>
+                <li>Common shapes include Gaussian, Uniform, and Log Normal.</li>
+            </ul>
         </section>
 
         <section id="mcmc-inversion">
@@ -500,8 +512,8 @@
                 <div class="col-9 my-auto">
                     <h2 class="slide-title">What about uncertainty quantification?</h2>
                 </div>
+            </div>
                 <hr/>
-                <br>
                 <div class="row">
                     <div class="col-5">
 
@@ -526,7 +538,6 @@
                         </figure>
                     </div>
                 </div>
-            </div>
         </section>
 
         <section id="hpd">
@@ -537,9 +548,9 @@
                 <div class="col-9 my-auto">
                     <h2 class="slide-title">Highest Posterior Density Intervals (HPDI)</h2>
                 </div>
-                <hr/>
-            </div>
 
+            </div>
+            <hr/>
             <div class="row">
                 <div class="col-5">
                     <ul class="content-list">
@@ -551,7 +562,8 @@
                 </div>
                 <div class="col-6">
                     <figure>
-                        <figcaption>A posterior distribution with the HPD interval and equal-tailed interval.</figcaption>
+                        <img src="images/hpd.svg" alt="HPD interval on histogram" class="img-fluid plain">
+                        <figcaption>A sample histogram with the HPD interval.</figcaption>
                     </figure>
                 </div>
             </div>
@@ -565,13 +577,14 @@
                 <div class="col-9 my-auto">
                     <h2 class="slide-title">Kernel Density Estimates (KDE)</h2>
                 </div>
-                <hr/>
-            </div>
 
+            </div>
+            <hr/>
             <div class="row">
                 <div class="col-6">
                     <figure>
-                        <figcaption>A histogram of the posterior distribution, KDE, and a selection of kernels.</figcaption>
+                        <img src="images/kde.svg" alt="Kernal Density Estimation" class="plain img-fluid">
+                        <figcaption>A histogram of the posterior distribution and KDE. Top: 50 samples. Bottom: 1000 samples.</figcaption>
                     </figure>
                 </div>
                 <div class="col-5">
@@ -595,8 +608,8 @@
                 <div class="col-9 my-auto">
                     <h2 class="slide-title">Uncertainty Quantification for the Inversion Example</h2>
                 </div>
-                <hr/>
             </div>
+            <hr/>
             <div class="row">
                 <div class="col-4 my-auto">
                     <figure>
@@ -613,6 +626,50 @@
             </div>
         </section>
 
+        <section id="considerations">
+
+            <div class="row">
+                <div class="col-3">
+                    <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
+                </div>
+                <div class="col-9 my-auto">
+                    <h2 class="slide-title">Things to Consider</h2>
+                </div>
+            </div>
+            <hr/>
+            <div class="row">
+                <br><br>
+                <ul class="content-list">
+                    <li><span class="emph">Acceptance ratio</span> should be around 45% for 1D, 24% for 2D+.</li>
+                    <li>Tune the acceptance ratio using the <span class="emph">step size</span>.</li>
+                    <li>Many <span class="emph">shorter chains</span> with different starting points can be more
+                        effective
+                        than one long chain.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="part2">
+
+            <div class="row">
+                <div class="col-3">
+                    <img src="images/logo.png" alt="UT Dallas Logo" class="plain">
+                </div>
+                <div class="col-9 my-auto">
+                    <!--<h2 class="slide-title">Things to Consider</h2>-->
+                </div>
+            </div>
+            <hr/>
+            <div class="row">
+                <br><br>
+                <h1>Part 2: Hamiltonian Monte Carlo</h1>
+            </div>
+        </section>
+
+
+
+
         <section id="problems">
             <div class="row">
                 <div class="col-3">
@@ -621,8 +678,8 @@
                 <div class="col-9 my-auto">
                     <h2 class="slide-title">The Problem with Random Walk Sampling</h2>
                 </div>
-                <hr/>
             </div>
+            <hr/>
             <div class="row">
                 <div class="col-7">
                     <ul class="content-list">

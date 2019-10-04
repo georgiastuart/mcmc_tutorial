@@ -47,3 +47,7 @@ figcaption {
     fill: none;
     stroke: cornflowerblue;
 }
+
+.inv-text {
+    font-size: medium;
+}
