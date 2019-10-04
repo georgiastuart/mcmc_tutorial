@@ -16,13 +16,13 @@
     <link rel="stylesheet" href="revealjs/lib/css/monokai.css">
 
     <!-- Printing and PDF exports -->
-    <script>
-        var link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
-        document.getElementsByTagName('head')[0].appendChild(link);
-    </script>
+    <!--<script>-->
+        <!--var link = document.createElement('link');-->
+        <!--link.rel = 'stylesheet';-->
+        <!--link.type = 'text/css';-->
+        <!--link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';-->
+        <!--document.getElementsByTagName('head')[0].appendChild(link);-->
+    <!--</script>-->
 </head>
 <body>
 <div class="reveal">
@@ -48,6 +48,16 @@
                 </div>
             </div>
             <hr/>
+            <div class="row">
+                <ol class="content-list">
+                    <li><a href="#/motivation">Introduction and Motivation</a></li>
+                    <li><a href="#/sampling">Sampling from a distribution</a></li>
+                    <li><a href="#/why-mcmc">Markov chain Monte Carlo (MCMC)</a></li>
+                    <li><a href="#/mcmc-bayes">MCMC for inverse problems</a></li>
+                    <li><a href="#/uq1">Uncertainty Quantification</a></li>
+                    <li><a href="#/part2">Hamiltonian Monte Carlo</a></li>
+                </ol>
+            </div>
 
         </section>
 
@@ -942,7 +952,32 @@
                 <div class="col-9 my-auto">
                     <h2 class="slide-title">HMC Inversion Example</h2>
                 </div>
-                <hr/>
+            </div>
+            <hr/>
+            <div class="row">
+                <div class="col-4">
+                    <figure>
+                        <img src="images/reference_velocity.png" alt="Reference velocity with circular inclusion" class="plain img-fluid">
+                        <figcaption>Reference Velocity</figcaption>
+                    </figure>
+                </div>
+                <div class="col-4">
+                    <figure>
+                        <img src="images/starting_velocity.png" alt="Starting constant velocity" class="plain img-fluid">
+                        <figcaption>Starting Velocity</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/stdev.png" alt="Standard Deviation" class="plain img-fluid">
+                        <figcaption>Standard Deviation</figcaption>
+                    </figure>
+                </div>
+                <div class="col-4">
+                    <figure>
+                        <img src="images/avg_model.png" alt="Reference velocity with circular inclusion" class="plain img-fluid">
+                        <figcaption>Average Velocity after inversion</figcaption>
+                    </figure>
+
+                </div>
             </div>
         </section>
 
@@ -954,8 +989,16 @@
                 <div class="col-9 my-auto">
                     <h2 class="slide-title">Acknowledgments</h2>
                 </div>
-                <hr/>
             </div>
+            <hr/>
+            <ul class="content-list">
+                Thank you to...
+                <li>my advisors, Dr. Minkoff and Dr. Pereira.</li>
+                <li>the seismology group for use of their cluster, Optane.</li>
+                <li>the NSF Enriched Doctoral Training Program (EDT) for early support for this research. DMS Award #1514808</li>
+                <li>Pioneer Natural Resources and Rob Meek for providing industry context and data.</li>
+            </ul>
+            <h3>Get this talk at georgiastuart.github.io/mcmc_tutorial/</h3>
         </section>
     </div>
 </div>
