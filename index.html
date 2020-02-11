@@ -33,8 +33,8 @@
             <h3>Markov Chain Monte Carlo and Hamiltonian Monte Carlo</h3>
             <br>
             Georgia K. Stuart<br>
-            4 October 2019<br>
-            Scientific Computing Seminar, UT Dallas
+            11 February 2020<br>
+            3D+4D Seismic Seminar, UT Dallas
 
         </section>
 
@@ -345,7 +345,7 @@
             </div>
             <hr/>
             <ul class="content-list">
-                <li>The <span class="emph">Metropolis criterion</span> determines whether a sample is accepted or rejected.</li>
+                <li>The <span class="emph">acceptance probability</span> determines whether a sample is accepted or rejected.</li>
                 <li>It's a <span class="emph">ratio</span> of the <span class="emph">posterior values:</span></li>
                 $$ \rho (\theta, \theta_n) =  \frac{P(\theta)g(\theta_n \vert \theta)}{P(\theta_n)g(\theta \vert \theta_n)} $$
                 where \(g(\theta \vert \theta_n)\) is the transition probability.
@@ -837,6 +837,9 @@
             <br>
             <div class="row">
                 <ul class="content-list">
+                    <li>In HMC, we sample from the <span class="emph">canonical distribution</span>
+                        $$\exp\left(-H(q,p)\right)$$
+                    </li>
                     <li>The posterior distribution is embedded in the <span class="emph">potential energy</span>.
                     $$ U(\theta) = -\log\left(P(\theta \vert d)\right) = -\log\left(P(\theta)P(d \vert \theta)\right)$$
                         $$= -\log(P(\theta)) - log(P(d\vert\theta)$$
@@ -955,29 +958,33 @@
             </div>
             <hr/>
             <div class="row">
-                <div class="col-4">
-                    <figure>
-                        <img src="images/reference_velocity.png" alt="Reference velocity with circular inclusion" class="plain img-fluid">
-                        <figcaption>Reference Velocity</figcaption>
-                    </figure>
-                </div>
-                <div class="col-4">
-                    <figure>
-                        <img src="images/starting_velocity.png" alt="Starting constant velocity" class="plain img-fluid">
-                        <figcaption>Starting Velocity</figcaption>
-                    </figure>
-                    <figure>
-                        <img src="images/stdev.png" alt="Standard Deviation" class="plain img-fluid">
-                        <figcaption>Standard Deviation</figcaption>
-                    </figure>
-                </div>
-                <div class="col-4">
-                    <figure>
-                        <img src="images/avg_model.png" alt="Reference velocity with circular inclusion" class="plain img-fluid">
-                        <figcaption>Average Velocity after inversion</figcaption>
-                    </figure>
+                <figure>
+                    <img src="images/marmousi_ref_ini_avg.png" alt="Marmousi Example" class="plain img-fluid">
+                    <figcaption>Marmousi Hamiltonian Monte Carlo example</figcaption>
+                </figure>
+                    <!--                <div class="col-4">-->
+<!--                    <figure>-->
+<!--                        <img src="images/reference_velocity.png" alt="Reference velocity with circular inclusion" class="plain img-fluid">-->
+<!--                        <figcaption>Reference Velocity</figcaption>-->
+<!--                    </figure>-->
+<!--                </div>-->
+<!--                <div class="col-4">-->
+<!--                    <figure>-->
+<!--                        <img src="images/starting_velocity.png" alt="Starting constant velocity" class="plain img-fluid">-->
+<!--                        <figcaption>Starting Velocity</figcaption>-->
+<!--                    </figure>-->
+<!--                    <figure>-->
+<!--                        <img src="images/stdev.png" alt="Standard Deviation" class="plain img-fluid">-->
+<!--                        <figcaption>Standard Deviation</figcaption>-->
+<!--                    </figure>-->
+<!--                </div>-->
+<!--                <div class="col-4">-->
+<!--                    <figure>-->
+<!--                        <img src="images/avg_model.png" alt="Reference velocity with circular inclusion" class="plain img-fluid">-->
+<!--                        <figcaption>Average Velocity after inversion</figcaption>-->
+<!--                    </figure>-->
 
-                </div>
+<!--                </div>-->
             </div>
         </section>
 
@@ -993,11 +1000,15 @@
             <hr/>
             <div class="row">
                 <ul class="content-list">
-                    <li>Neal, R. M., 2011, MCMC using Hamiltonian dynamics, in S. Brooks, A. Gelman, G. L. Jones, and X.-L. Meng, eds., Handbook of Markov Chain Monte Carlo, Handbooks of Modern Statistical MethodsChapman & Hall / CRC, 113–162.</li>
-                    <li>Stuart, G. K., S. E. Minkoff, and F. Pereira, 2019, A Two-Stage Markov Chain Monte Carlo Method for Seismic Inversion and Uncertainty Quantification: Geophysics. (To Appear)</li>
+                    <small>
+                        <li>Betancourt, M., 2017, A Conceptual Introduction to Hamiltonian Monte Carlo: arXiv [stat.ME].</li>
+                    <li>Neal, R. M., 2011, MCMC using Hamiltonian dynamics, in S. Brooks, A. Gelman, G. L. Jones, and X.-L. Meng, eds., Handbook of Markov Chain Monte Carlo, Handbooks of Modern Statistical Methods Chapman & Hall / CRC, 113–162.</li>
+                    <li>Stuart, G. K., S. E. Minkoff, and F. Pereira, 2019, A two-stage Markov chain Monte Carlo method for seismic inversion and uncertainty quantification: Geophysics, 84, R1015–R1032.</li>
                     <li>Stuart, G. K., S. E. Minkoff, and F. Pereira, 2019, Enhanced neural network sampling for two-stage Markov chain Monte Carlo seismic inversion: SEG Technical Program Expanded Abstracts 2019, 5, 1665–1669.</li>
                     <li>Stuart, G., W. Yang, S. Minkoff, and F. Pereira, 2016, A two-stage Markov chain Monte Carlo method for velocity estimation and uncertainty quantification: SEG Technical Program.</li>
+                        <li>Vdovina, T., S. E. Minkoff, and O. Korostyshevskaya, 2005, Operator Upscaling for the Acoustic Wave Equation: Multiscale Modeling & Simulation: A SIAM Interdisciplinary Journal, 4, 1305–1338.</li>
 
+                    </small>
                 </ul>
             </div>
         </section>
@@ -1014,10 +1025,12 @@
             <hr/>
             <ul class="content-list">
                 Thank you to...
-                <li>my advisors, Dr. Minkoff and Dr. Pereira.</li>
+                <li>my advisers, Dr. Minkoff and Dr. Pereira.</li>
                 <li>the seismology group for use of their cluster, Optane.</li>
-                <li>the NSF Enriched Doctoral Training Program (EDT) for early support for this research. DMS Award #1514808</li>
-                <li>Pioneer Natural Resources and Rob Meek for providing industry context and data.</li>
+                <li>the Ganymede cluster team.</li>
+                <li>the NSF Enriched Doctoral Training Program (EDT) for early support for this research. DMS Award #1514808.</li>
+                <li>Pioneer Natural Resources, Rob Meek, and Matt McChesney for providing industry context and data.</li>
+
             </ul>
             <h3>Get this talk at georgiastuart.github.io/mcmc_tutorial/</h3>
         </section>
